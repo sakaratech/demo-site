@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+    <link rel="stylesheet" href="animation.css">
+    <link rel="stylesheet" href="sweetalert2.min.css">
+</head>
+<body>
+    <div class="animatebox">
+        <img src="images/jet.png" class="" id="jet">
+    </div>
+    <section>
+        <header class="about">
+            <div class="menu">
+             <img class="logo"  src="images/logo.png" alt="logo">
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html" class="contactBtn">Contact</a>
+                    <span>Follow us |</span>
+                    <a href="https://www.facebook.com/@sakaramediadesigns/"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.linkedin.com/in/sakara-tech-solutions-25490335"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/kingbillano/"><i class="fab fa-instagram"></i></a>
+            </nav>   
+            <i class="fas fa-bars" id="bars">&#9776;</i>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-times" id="cancel">&times;</i>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a><br>
+                <a href="https://www.facebook.com/@sakaramediadesigns/"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.linkedin.com/in/sakara-tech-solutions-25490335"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/kingbillano/"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="description">
+                <div class="text">
+                    <h1>Contact Us</h1> 
+                </div>
+            </div>
+        </header>
+    </section>
+    <section class="about-us">
+	
+		<div class="row">
+		
+			<div class="about-col">
+				<h2>We are Open For New Projects!</h2>
+				<p>
+				Having a strong online presence is about more than just having a great website.That's why we offer a full suite of digital
+				 marketing services.We help you reach your target audience and drive more traffic to your website.
+				</p>
+				<a href="services.html">
+                    <button>OUR PRODUCTS</button>
+                </a>
+			</div>	
+			
+			<div class="about-col">
+				<img src="images/pic3.jpg" title="about">
+			</div>
+			
+		</div>
+	</section>
+    <section class="contact">
+	
+		<div class="row">
+		
+			<div class="contact-col">
+				<div>
+					<i class="fa fa-home"></i>
+					<span>
+						<h5> 217 Rivera Killarny johannesburg </h5>
+						<p>Main Road to Houghton</p>
+					</span>
+				</div>
+				<div>
+					<i class="fa fa-phone"></i>
+					<span>
+						<h5>+27 60 202 6336</h5>
+						<p>Monday to Saturday, 7AM to 5PM</p>
+					</span>
+				</div>
+				<div>
+					<i class="fa fa-envelope-o"></i>
+					<span>
+						<h5>raymond@sakaratech.co.za</h5>
+						<p>Email Us To Know More</p>
+					</span>
+				</div>
+			</div>
+			
+			<div class="contact-col">
+				
+				<form action="https://formsubmit.co/sakaratech@outlook.com" method="post" id="form">
+					<input type="text" placeholder="Enter Your Name" name="name"  required><br>
+					<input type="Email" placeholder="Enter Email Address"  name="email" required><br>
+					<input type="text" placeholder="Enter Your Subject" name="subject" required><br>
+					<textarea rows="8" placeholder="Message" name="message"  required></textarea><br>
+					<button type="submit">Send Message</button><br>
+				</form>
+			</div>
+		</div>	
+		
+	</section>
+	<br><br><br><br>
+	<center><h2 style="font-size: 35px;">Thank You For Choosing Us.</h2>
+		<br><br>
+	</center>
+    <footer>
+        <h3>Quick links</h3>
+        <div class="footerlinks">
+            <a href="index.html">Home</a>
+            <a href="about.html">About-Us</a>
+            <a href="services.html">Our Product</a>
+            <a href="contact.html">Get in touch</a>
+            <a href="https://wa.me/27602026336">Whatsapp us</a>
+            
+        </div>
+        <hr>
+        <div>
+            <p> <b>CEO: Mr Raymond Ndimande</b></p>
+            <p><b>060 202 6336</b></p>
+            <p><b>raymond@sakaratech.co.za</b></p>
+            <p><b>217 Rivera Killarny johannesburg </b>
+            </p>
+    <p>©Sakara Tech Solutions 2024</p>
+    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-linkedin"></i>
+        </div>
+    </footer>
+    <script src="sweetalert2.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        //form submit
+const form = document.getElementById("form");
+const animatebox = document.querySelector(".animatebox");
+const jet = document.getElementById('jet');
+
+form.addEventListener("submit", (e)=>{
+    e.preventDefault();
+    animatebox.classList.add("show");
+    jet.classList.add('bounce-out-top'); 
+    setTimeout(()=>{
+        animatebox.classList.remove("show");
+        jet.classList.remove('bounce-out-top'); 
+    }, 2000);
+    setTimeout(()=>{
+        Swal.fire({
+            title:"Success",
+            icon:"success",
+            text:"Message delivered successfully",
+            confirmButtonText:"ok"
+       }) 
+       .then((result)=>{
+            if(result.isConfirmed){
+                 setTimeout(()=>{
+                      form.submit();
+                 }, 0);
+                 form.reset();
+            }
+       })
+    }, 2000)
+})
+    </script>
+</body>
+</html>
